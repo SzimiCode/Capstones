@@ -26,7 +26,7 @@ app.get("/search", (req, res) => {
   })
 
 var blogText = "";
-app.post("/index", (req, res) => {
+app.post("/submit", (req, res) => {
     const data = {
       blogText: blogText,
     };
