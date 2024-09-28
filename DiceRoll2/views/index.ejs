@@ -6,7 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include("partials/header.ejs") %>
     <h1>index </h1>
+    <a href="/writing">Writing</a>
+    <form action="/writing" method="GET">
+      <input type="submit" value="Write Your Blog">
+    </form>
+  <%- include("partials/footer.ejs") %>
+    
 
 </body>
 </html>
