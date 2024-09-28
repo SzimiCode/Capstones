@@ -12,9 +12,8 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs", {
-    });
-  });
+    res.render("index.ejs", { blogText: blogText });
+});
 app.get("/writing", (req, res) => {
     res.render("writing.ejs");
   })
@@ -25,13 +24,11 @@ app.get("/search", (req, res) => {
     res.render("search.ejs");
   })
 
-var blogText = "";
+let blogText = "";
 app.post("/submit", (req, res) => {
-    const data = {
-      blogText: blogText,
-    };
-    res.render("index.ejs", data);
-  });
+    blogText = req.body.blogText;  
+    res.redirect("/");  
+});
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);
   });
