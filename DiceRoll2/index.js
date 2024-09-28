@@ -24,6 +24,14 @@ app.get("/contact", (req, res) => {
 app.get("/search", (req, res) => {
     res.render("search.ejs");
   })
+
+var blogText = "";
+app.post("/index", (req, res) => {
+    const data = {
+      blogText: blogText,
+    };
+    res.render("index.ejs", data);
+  });
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);
   });

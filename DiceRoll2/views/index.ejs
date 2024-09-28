@@ -12,6 +12,13 @@
     <form action="/writing" method="GET">
       <input type="submit" value="Write Your Blog">
     </form>
+    <% if (locals.blogText) { %>
+        <h3>Your Last Text: </h3>
+        <h4><%= blogText %></h4>
+        <% } else { %>
+        <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
+        <% } %>
+    
   <%- include("partials/footer.ejs") %>
     
 
