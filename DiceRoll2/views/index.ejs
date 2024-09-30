@@ -12,7 +12,6 @@
       <input type="submit" value="Write Your Blog">
     </form>
     <% if (locals.blogText) { %>
-      <% if (blogTexts.length === 0) {%>
         <h3>Your Texts: </h3>
         <form id="deleteForm" action="/delete-texts" method="POST">
           <ol>
@@ -25,9 +24,6 @@
           </ol>
           <button type="submit">Delete Selected</button>
         </form>
-        <% } else { %>
-          <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
-          <% } %>
         <% } else { %>
         <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
         <% } %>
