@@ -16,7 +16,7 @@
         <h3>Your Texts: </h3>
         <ol>
         <% for(let i=0; i<blogTexts.length;i++){ %>
-            <li> <%= blogTexts[i] %></li>
+            <li> <%= blogTexts[i] %> </li> <input type="checkbox" id=`Text${i}`>
             <% } %>
         </ol>
         <form action="/" method="GET">
