@@ -14,11 +14,14 @@
     </form>
     <% if (locals.blogText) { %>
         <h3>Your Texts: </h3>
-        <ul>
+        <ol>
         <% for(let i=0; i<blogTexts.length;i++){ %>
             <li> <%= blogTexts[i] %></li>
             <% } %>
-        </ul>
+        </ol>
+        <form action="/" method="GET">
+          <input type="submit" value="Delete">
+        </form>
         <% } else { %>
         <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
         <% } %>
