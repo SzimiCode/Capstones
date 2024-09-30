@@ -14,7 +14,11 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs", { blogText: blogText });
+  const data = {
+    blogText: blogText,
+    blogTexts: blogTexts,
+  };
+  res.render("index.ejs", data);
 });
 app.get("/writing", (req, res) => {
     res.render("writing.ejs");
@@ -25,10 +29,11 @@ app.get("/contact", (req, res) => {
 app.get("/search", (req, res) => {
     res.render("search.ejs");
   })
-
+let blogTexts = [];
 let blogText = "";
 app.post("/submit", (req, res) => {
-    blogText = req.body.blogText;  
+    blogText = req.body.blogText;
+    blogTexts.push(blogText);
     res.redirect("/");  
 });
 app.listen(port, () => {
