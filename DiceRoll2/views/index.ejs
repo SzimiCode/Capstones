@@ -18,12 +18,18 @@
         <% for(let i=0; i<blogTexts.length;i++){ %>
             <li> <%= blogTexts[i] %> </li> 
             <input type="checkbox" id=`deleteText${i}`  value="Delete"> 
-            <form action="/" method="GET"></form>
+            <form action="/editing" method="PUT"></form>
             <input type="submit" value="Edit">
             </form>
             <% } %>
         </ol>
-        <form action="/" method="GET">
+        <form action="/" method="DELETE">
+          <% for(let i=0; i<blogTexts.length;i++){ %>
+            <% var isChecked = document.getElementById(`deleteText${i}`).checked; %>
+            <% if (isChecked) {
+              <% delete blogTexts[i] %>
+              <% } %>
+            <% } %>
           <input type="submit" value="Delete">
         </form>
         
