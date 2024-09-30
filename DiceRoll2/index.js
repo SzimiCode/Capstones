@@ -12,6 +12,9 @@ const port = 3000;
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
 
 app.get("/", (req, res) => {
   const data = {
