@@ -12,22 +12,22 @@
       <input type="submit" value="Write Your Blog">
     </form>
     <% if (locals.blogText) { %>
-        <h3>Your Texts: </h3>
-        <form id="deleteForm" action="/action1" method="POST">
-          <ol>
-            <% blogTexts.forEach((text, index) => { %>
-              <li>
-                <%= text %>
-                <input type="checkbox" name="deleteTexts" value="<%= index %>" id="delete"> 
-                <input type="submit" value="Edit" value="<%= index %>" id="edit">
-              </li>
-            <% }); %>
-          </ol>
-          <button type="submit">Delete Selected</button>
-        </form>
-        <% } else { %>
-        <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
-        <% } %>
+      <h3>Your Texts: </h3>
+      <form id="deleteForm" action="/action1" method="POST">
+        <ol>
+          <% blogTexts.forEach((text, index) => { %>
+            <li>
+              <%= text %>
+              <input type="checkbox" name="deleteTexts" value="<%= index %>"> 
+              <button type="submit" name="action" value="edit" formaction="/action1?editIndex=<%= index %>">Edit</button>
+            </li>
+          <% }); %>
+        </ol>
+        <button type="submit" name="action" value="delete">Delete Selected</button>
+      </form>
+  <% } else { %>
+      <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
+  <% } %>
     
   <%- include("partials/footer.ejs") %>
     

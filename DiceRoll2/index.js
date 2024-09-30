@@ -40,16 +40,30 @@ app.post("/submit", (req, res) => {
     res.redirect("/");  
 });
 app.post('/action1', (req, res) => {
-  const action = req.body.id;
+  const action = req.body.action; // Akcja (delete lub edit)
+  
   if (action === "delete") {
     const indexesToDelete = req.body.deleteTexts; 
     if (indexesToDelete) {
       blogTexts = blogTexts.filter((text, index) => !indexesToDelete.includes(index.toString()));
     }
+    res.redirect('/');
   } else if (action === "edit") {
- 
+    const editIndex = req.query.editIndex; // Indeks do edytowania
+    if (editIndex !== undefined) {
+      const textToEdit = blogTexts[editIndex];
+      res.render("editing.ejs", { textToEdit, editIndex });
+    } else {
+      res.redirect('/'); // Jeśli nie ma indeksu, przekierowujemy na stronę główną
+    }
   }
-  res.redirect('/');
+});
+app.post('/update', (req, res) => {
+  const { blogText, editIndex } = req.body; // Odbieramy nowy tekst i indeks
+  if (editIndex !== undefined) {
+    blogTexts[editIndex] = blogText; // Aktualizujemy tekst w tablicy
+  }
+  res.redirect('/'); // Przekierowujemy na stronę główną
 });
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);

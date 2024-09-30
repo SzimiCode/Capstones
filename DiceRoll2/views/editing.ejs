@@ -6,12 +6,12 @@
     <title>DiceRoll | Blog</title>
 </head>
 <body>
-    <form>
-      </form>
-      <form action="/submit" method="POST">
-        <label for="blogText">You can edit your text below: </label>
-        <input type="text" id="blogText" name="blogText">
-        <input type="update" value="OK" />
-      </form>
+    <h1>Edit Your Text</h1>
+    <form action="/update" method="POST">
+        <label for="blogText">You can edit your text below:</label>
+        <input type="text" id="blogText" name="blogText" value="<%= textToEdit %>">
+        <input type="hidden" name="editIndex" value="<%= editIndex %>"> <!-- Przekazujemy indeks do aktualizacji -->
+        <input type="submit" value="OK">
+    </form>
 </body>
 </html>
