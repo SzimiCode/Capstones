@@ -39,6 +39,13 @@ app.post("/submit", (req, res) => {
     blogTexts.push(blogText);
     res.redirect("/");  
 });
+app.post('/delete-texts', (req, res) => {
+  const indexesToDelete = req.body.deleteTexts; 
+  if (indexesToDelete) {
+    blogTexts = blogTexts.filter((text, index) => !indexesToDelete.includes(index.toString()));
+  }
+  res.redirect('/');
+});
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);
   });
