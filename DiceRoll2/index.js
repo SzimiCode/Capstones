@@ -39,10 +39,15 @@ app.post("/submit", (req, res) => {
     blogTexts.push(blogText);
     res.redirect("/");  
 });
-app.post('/delete-texts', (req, res) => {
-  const indexesToDelete = req.body.deleteTexts; 
-  if (indexesToDelete) {
-    blogTexts = blogTexts.filter((text, index) => !indexesToDelete.includes(index.toString()));
+app.post('/action1', (req, res) => {
+  const action = req.body.id;
+  if (action === "delete") {
+    const indexesToDelete = req.body.deleteTexts; 
+    if (indexesToDelete) {
+      blogTexts = blogTexts.filter((text, index) => !indexesToDelete.includes(index.toString()));
+    }
+  } else if (action === "edit") {
+ 
   }
   res.redirect('/');
 });
