@@ -39,6 +39,7 @@ app.post("/submit", (req, res) => {
     blogTexts.push(blogText);
     res.redirect("/");  
 });
+
 app.post('/action1', (req, res) => {
   const action = req.body.action; // Akcja (delete lub edit)
   
