@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import methodOverride from "method-override";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -12,7 +13,6 @@ const port = 3000;
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 
