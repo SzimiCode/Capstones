@@ -16,12 +16,17 @@
         <h3>Your Texts: </h3>
         <ol>
         <% for(let i=0; i<blogTexts.length;i++){ %>
-            <li> <%= blogTexts[i] %> </li> <input type="checkbox" id=`Text${i}`>
+            <li> <%= blogTexts[i] %> </li> 
+            <input type="checkbox" id=`deleteText${i}`  value="Delete"> 
+            <form action="/" method="GET"></form>
+            <input type="submit" value="Edit">
+            </form>
             <% } %>
         </ol>
         <form action="/" method="GET">
           <input type="submit" value="Delete">
         </form>
+        
         <% } else { %>
         <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
         <% } %>
