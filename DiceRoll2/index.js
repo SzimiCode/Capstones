@@ -58,11 +58,10 @@ app.post('/action1', (req, res) => {
   }
 });
 app.post('/update', (req, res) => {
-  const { blogText, editIndex } = req.body; 
-  if (editIndex !== undefined) {
-    blogTexts[editIndex] = blogText; 
-  }
-  res.redirect('/'); 
+  const updatedText = req.body.blogText;
+  const editIndex = req.body.editIndex;
+  blogTexts[editIndex] = updatedText;  
+  res.redirect('/');
 });
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);
