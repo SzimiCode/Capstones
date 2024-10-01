@@ -1,14 +1,24 @@
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center ms-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+
+<div class="container"></div>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom navbar">
+      <a href="/" class="d-flex align-items-center ms-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img src="/images/booksvg.svg" alt="Box" height="20">
         <span class="fs-4 ms-1">DiceRoll | Blog</span> 
-    </a>
+      </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+  </div>
 
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-    </ul>
-  </header>
+
+  <li class="nav-item">
+    <form action="/writing" method="GET" class="d-inline">
+        <input type="submit" value="Write Your Blog" class="nav-link" style="border: none; background: none; color: inherit; cursor: pointer;">
+    </form>
+</li>
+
+<form action="/writing" method="GET">
+    <input type="submit" value="Write Your Blog">
+  </form>

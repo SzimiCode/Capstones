@@ -1,4 +1,16 @@
 /* Header */ 
-.header-custom {
-    background-color: #A3B18A; /* Kolor tła nagłówka */
+.navbar {
+    background-color: #A3B18A !important;
+}
+.nav-pills .nav-link.active {
+    background-color: #31572C !important; /* Kolor tła dla aktywnego linku */
+    color: white !important; /* Kolor tekstu dla aktywnego linku */
+}
+
+.nav-link {
+    color: black; /* Kolor tekstu dla nieaktywnych linków */
+}
+
+.nav-link:hover {
+    color: gray; /* Kolor tekstu przy najechaniu */
 }
