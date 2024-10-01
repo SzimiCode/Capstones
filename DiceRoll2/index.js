@@ -14,6 +14,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(express.static('public')); //mozna uzywać express
 
 
 app.get("/", (req, res) => {
