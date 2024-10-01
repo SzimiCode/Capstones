@@ -29,9 +29,6 @@ app.get("/writing", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact.ejs");
   })
-app.get("/search", (req, res) => {
-    res.render("search.ejs");
-  })
 let blogTexts = [];
 let blogText = "";
 app.post("/submit", (req, res) => {
