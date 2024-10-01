@@ -5,6 +5,7 @@
 .nav-pills .nav-link.active {
     background-color: #31572C !important; /* Kolor tła dla aktywnego linku */
     color: white !important; /* Kolor tekstu dla aktywnego linku */
+    margin-right: 10px;
 }
 
 .nav-link {
