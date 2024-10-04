@@ -15,5 +15,13 @@
 .nav-link:hover {
     color: gray; /* Kolor tekstu przy najechaniu */
 }
-
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+    background-color: #31572C;
+  }
+.icon-link{
+    color:black;
+}
 /* Footer */
