@@ -24,4 +24,27 @@
 .icon-link{
     color:black;
 }
+/* Mail */
+.mail{
+    display: flex;
+}
+#buttonWrite {
+    color: white;
+    background-color: #31572C;
+    border-radius: 0.5em; /* Zmieniono przecinek na kropkę */
+    padding: 0.5em 1em; /* Dodano padding dla lepszego wyglądu */
+    border: none; /* Usunięcie obramowania */
+    cursor: pointer; /* Zmieniono kursor na wskaźnik */
+}
+
+#mailText {
+    border-radius: 0.5em; /* Zmieniono przecinek na kropkę */
+    padding: 0.5em;
+    margin-right: 0.5em; /* Dodano odstęp od przycisku */
+    border: 1px solid #31572C; /* Obramowanie w kolorze przycisku */
+}
+
+.start{
+    display: flex;
+}
 /* Footer */

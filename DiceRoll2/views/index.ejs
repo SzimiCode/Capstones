@@ -9,9 +9,17 @@
   </head>
 <body>
     <%- include("partials/header.ejs") %>
-    <form action="/writing" method="GET">
-      <input type="submit" value="Write Your Blog">
-    </form>
+    <div class="start my-5 mx-5">
+      <div class="Untitled mb-5">
+        <h1>Untitled Blog</h1>
+      </div>
+      <div class="mail my-3" >
+        <input type="text" id="mailText" name="mail" placeholder="Your email">
+        <form action="/writing" method="GET">
+            <input type="submit" id="buttonWrite" value="Write Your Blog">
+        </form>
+    </div>
+   
     <% if (locals.blogText) { %>
       <h3>Your Texts: </h3>
       <form id="deleteForm" action="/action1" method="POST">
@@ -28,8 +36,9 @@
       </form>
   <% } else { %>
     
-      <h3>You don't have any texts currently. If you want to write some, click Writing.</h3>
+      <h5>You don't have any texts currently. If you want to write some, click Writing.</h5>
   <% } %>
+</div>
     <div class="px-4 pt-5 my-5 text-center border-bottom">
       <h1 class="display-4 fw-bold text-body-emphasis">Movie With Joy</h1>
       <div class="col-lg-6 mx-auto">
