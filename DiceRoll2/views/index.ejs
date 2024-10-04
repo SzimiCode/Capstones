@@ -10,6 +10,7 @@
 <body>
     <%- include("partials/header.ejs") %>
     <div class="start my-5 mx-5">
+      <div class="leftsite">
       <div class="Untitled mb-5">
         <h1>Untitled Blog</h1>
       </div>
@@ -19,36 +20,36 @@
             <input type="submit" id="buttonWrite" value="Write Your Blog">
         </form>
     </div>
-   
+  </div>
+  <div class="rightsite">
     <% if (locals.blogText) { %>
       <h3>Your Texts: </h3>
       <form id="deleteForm" action="/action1" method="POST">
-        <ol>
+        <ol class="custom-list">
           <% blogTexts.forEach((text, index) => { %>
             <li>
-              <%= text %>
-              <input type="checkbox" name="deleteTexts" value="<%= index %>"> 
-              <button type="submit" name="action" value="edit" formaction="/action1?editIndex=<%= index %>">Edit</button>
+              <div class="list-text"><%= text %></div>
+              <div class="actions">
+                <input type="checkbox" name="deleteTexts" value="<%= index %>"> 
+                <button type="submit" name="action" id="buttonEdit" value="edit" formaction="/action1?editIndex=<%= index %>">Edit</button>
+              </div>
             </li>
           <% }); %>
         </ol>
-        <button type="submit" name="action" value="delete">Delete Selected</button>
+        <button type="submit" id="buttonWrite" name="action" value="delete">Delete Selected</button>
       </form>
   <% } else { %>
     
       <h5>You don't have any texts currently. If you want to write some, click Writing.</h5>
   <% } %>
 </div>
+</div>
     <div class="px-4 pt-5 my-5 text-center border-bottom">
-      <h1 class="display-4 fw-bold text-body-emphasis">Movie With Joy</h1>
+      <h1 class="display-4 fw-bold text-body-emphasis">Explore the World of Board Games!</h1>
       <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Welcome to our website, where we are on a mission to provide exceptional moving services to customers in the US. As a startup, we believe that moving doesn't have to be stressful or complicated, and we are passionate about making the process as seamless and enjoyable as possible.</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get a Quote</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Contact Us</button>
-        </div>
+        <p class="lead mb-4">Dive into the fascinating universe of board games, where strategy meets creativity! Join our community of passionate gamers and discover insightful reviews, gameplay tips, and exciting stories that will enhance your next gaming session. Whether you're a seasoned pro or just starting your journey, there’s something for everyone here!</p>
       </div>
-      <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="overflow-hidden" style="max-height: 40vh;">
         <div class="container px-5">
           <img src="/images/boardgames.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="600" loading="lazy">
         </div>

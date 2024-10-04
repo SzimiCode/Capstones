@@ -43,8 +43,64 @@
     margin-right: 0.5em; /* Dodano odstęp od przycisku */
     border: 1px solid #31572C; /* Obramowanie w kolorze przycisku */
 }
-
+#buttonEdit {
+    color: white;
+    background-color: #31572C;
+    border-radius: 0.5em; /* Zmieniono przecinek na kropkę */
+    padding: 0.25em 0.5em; /* Dodano padding dla lepszego wyglądu */
+    border: none; /* Usunięcie obramowania */
+    cursor: pointer; /* Zmieniono kursor na wskaźnik */
+}
 .start{
     display: flex;
+    justify-content: space-between;
+}
+.rightsite {
+    flex: 1;
+    box-sizing: border-box;
+    margin-left: 5rem;
+}
+.leftsite{
+    margin-top: 5rem;
+}
+.custom-list {
+    width: 100%;
+}
+/* Stylizacja dla elementów li */
+.custom-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    background-color: #f9f9f9;
+}
+#buttonEdit:hover {
+    background-color: #1e3d1c; /* Ciemniejszy kolor po najechaniu */
+}
+
+/* Stylizacja checkboxa */
+input[type="checkbox"] {
+    transform: scale(1.2); /* Powiększenie checkboxa */
+}
+.list-text {
+    flex-grow: 1;
+    padding-right: 1em;
+    word-wrap: break-word; /* Zawijanie długich linii */
+    white-space: normal; /* Zawijanie tekstu */
+    overflow-wrap: break-word; /* Zapewnia dodatkowe zawijanie słów */
+    overflow: hidden; /* Ukrywa nadmiar tekstu */
+    text-overflow: ellipsis; /* Dodaje wielokropek, jeśli tekst jest zbyt długi */
+    max-width: 1250px;
+}
+
+
+/* Kontener dla checkboxa i przycisku */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5em; /* Odstęp między elementami */
 }
 /* Footer */
